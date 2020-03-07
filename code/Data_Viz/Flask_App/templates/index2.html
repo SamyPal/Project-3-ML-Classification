@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Risk for CVD</title>
+  <style>
+  body{
+    font-family: sans-serif;
+		background-image: url('file:///Users/samypalaniappan/Desktop/02_Project3/flask2/templates/abstract-medical-wallpaper-template-design_53876-61802.jpg');
+  }
+  .button {
+    background-color: #ffff66;
+    border: none;
+    color: Black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .animal-card {
+		background-image: url('https://previews.123rf.com/images/apostrophe/apostrophe1403/apostrophe140300013/26540708-bright-yellow-background-solid-color-primary-image-with-soft-vintage-grunge-background-texture-desig.jpg')
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 1px 1px 1px #eee;
+    width: 300px;
+    margin: auto;
+  }
+  </style>
+
+</head>
+
+<body align="center">
+
+  <h2>Lets Eradicate Chronic Heart Disease (CHD)</h2>
+  <h3>STEP1: Find out if you are risk prone to CHD here:</h3>
+  <form action="/predict_cvd2/" method="post">
+
+    <div style="background-color:#ff3300;" class="animal-card" align="center" background-image: url('https://previews.123rf.com/images/apostrophe/apostrophe1403/apostrophe140300013/26540708-bright-yellow-background-solid-color-primary-image-with-soft-vintage-grunge-background-texture-desig.jpg')>
+
+			"Age":
+			<br>
+				<input type="int" name="age" value=29>
+			<br>
+      <br>
+			Total Cholesterol:
+      <br>
+        <input type="int" name="totChol" value=150>
+      <br>
+      <br>
+			Diastolic Blood Pressure:
+      <br>
+        <input type="int" name="MAP" value=110>
+      <br>
+      <br>
+			BMI:
+      <br>
+        <input type="int" name="BMI" value=23>
+      <br>
+      <br>
+      Cigarettes per Day:
+      <br>
+      	<input type="int" name="cigsPerDay" value=0>
+      <br>
+      <br>
+			heart rate:
+      <br>
+        <input type="int" name="heartRate" value=72>
+      <br>
+      <br>
+			Glucose:
+      <br>
+        <input type="int" name="glucose" value=98>
+      <br>
+
+      <br>
+			<label for="male">Sex: </label>
+			<select id="male" name="male">
+  			<option value=0>Female</option>
+  			<option value=1>Male</option>
+			</select>
+			<br>
+
+			<br>
+			<label for="prevalentHyp">Prevalent Hypertension:</label>
+			<select id="prevalentHyp" name="prevalentHyp">
+  			<option value=0>No</option>
+  			<option value=1>Yes</option>
+			</select>
+			<br>
+    </div
+
+  <br>
+
+  <button type="submit" class="button">
+    Submit Form
+  </button>
+  </form>
+
+  <br>
+
+  {% if message %}
+  <h2>{{message}}</h2>
+  {% endif %}
+
+</body>
+</html>

@@ -1,8 +1,9 @@
-Cookicutter Data Science Simplified
+**Risk Prediction for Coronary Heart Disease**
 
-This small project is meant to be a beginner's introduction to Cookiecutter Data Science.
-Just clone or download this repo and poke around a bit. 
-For the original and much more extensive version of Cookiecutter Data Science, see [here](https://drivendata.github.io/cookiecutter-data-science/).
+This project utilizes classification algorithms in machine learning  - Logistic Regression, K-Nearest Neighbors, Naive Bayes, Decision Tree, and Random Forest ensemble technique) to evaluate the risk to getting coronary heart disease. For this, i used the teaching dataset from the Framinham Heart Disease study. 
+The features used for the evaluation was: Age, Mean Blood Pressure, Total Cholesterol, Body Mass Index, total cigarettes smoked per day. EDA was performed on the data set, followed by testing the effectiveness of each vanilla model on the test set, finally grid search was used to evaluate the hyperparameters for the top two performing models. Random forest turned out to be the best model for this scenario. 
+
+I built a flask app with javascript, that takes in patient particulars and evaluates the risk for CHD for the person, to demonstrate the functioning of the model.
 
 
 ```
@@ -32,4 +33,4 @@ Template Organization
 
 
 Enjoy!    
-Erik Kristofer Anderson
+Samy Palaniappan
