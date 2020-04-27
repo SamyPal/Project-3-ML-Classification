@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Heroku Flask App Demo </title>
+	<style>
+body {background-color: #FDFEFE;}
+h1   {color: #273746;}
+p    {color: #273746;}
+</style>
+</head>
+<body align="center">
+	<h1> A Simple to Evaluate Risk for Chronic Heart Disease (CHD)  </h1>
+	<p>
+		This is simple flask app that determines a persons risk for contracting CHD,
+		based on their physical health.
+		<br>The app uses a Random Forest machine learning model, trained with the data
+		from Framingham heart study, with an accuracy of . <br>You can learn more about
+		the study click <a href = "https://framinghamheartstudy.org/fhs-about/"> here </a>.
+		<br>The model, as the data, is biased towards the demographics of Framingham,
+		at the time of the study.
+	</p>
+
+  <h2>Lets Eradicate Chronic Heart Disease (CHD)</h2>
+  <h3>STEP1: Find out if you are risk prone to CHD here:</h3>
+  <form action="/render_message" method="post">
+
+    <div style="background-color:#FFCC80;" class="animal-card" align="center")>
+
+			"Age":
+			<br>
+				<input type="int" name="age" value=29>
+			<br>
+      <br>
+			Total Cholesterol:
+      <br>
+        <input type="int" name="totChol" value=150>
+      <br>
+      <br>
+			Diastolic Blood Pressure:
+      <br>
+        <input type="int" name="MAP" value=110>
+      <br>
+      <br>
+			BMI:
+      <br>
+        <input type="int" name="BMI" value=23>
+      <br>
+      <br>
+      Cigarettes per Day:
+      <br>
+      	<input type="int" name="cigsPerDay" value=0>
+      <br>
+      <br>
+			heart rate:
+      <br>
+        <input type="int" name="heartRate" value=72>
+      <br>
+      <br>
+			Glucose:
+      <br>
+        <input type="int" name="glucose" value=98>
+      <br>
+
+      <br>
+			<label for="male">Sex: </label>
+			<select id="male" name="male">
+  			<option value=0>Female</option>
+  			<option value=1>Male</option>
+			</select>
+			<br>
+
+			<br>
+			<label for="prevalentHyp">Prevalent Hypertension:</label>
+			<select id="prevalentHyp" name="prevalentHyp">
+  			<option value=0>No</option>
+  			<option value=1>Yes</option>
+			</select>
+			<br>
+    </div
+
+  <br>
+
+  <button type="submit" class="button">
+    Submit Form
+  </button>
+  </form>
+
+  <br>
+
+  {% if message %}
+  <h2>{{message}}</h2>
+  {% endif %}
+	<p>
+		**The model, as the data, is biased towards the demographics of Framingham,
+		at the time of the study. <br>More details about the study can be found
+		<a href="https://framinghamheartstudy.org/fhs-about/">here</a>. <br>The GitHub
+		repo for this project can be found
+		<a href="https://github.com/SamyPal/Project-3-ML-Classification">here</a>.
+
+		<br>This app was created by Samy Palaniappan, as a part of my learning exp.
+		<br><a href="https://github.com/SamyPal">GitHub</a>.
+		<br><a href="https://www.linkedin.com/in/samy-palaniappan-phd/">LinkedIn</a>.
+		<br><a href="https://sites.google.com/view/samy-pal-ph-d/home">Website</a>.
+		<br><a href="https://medium.com/@drsamypal">Blog</a>.
+		<br>You can reach me at drsamypal@gmail.
+	</p>
+</body>
+</html>
