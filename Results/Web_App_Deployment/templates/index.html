@@ -1,26 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Heroku Flask App Demo </title>
+	<title> A Simple App to Evaluate the Heart Risk to Contract a Coronary Heart Disease (CHD)  </title>
 	<style>
-body {background-color: #FDFEFE;}
-h1   {color: #273746;}
-p    {color: #273746;}
-</style>
-</head>
-<body align="center">
-	<h1> A Simple to Evaluate Risk for Chronic Heart Disease (CHD)  </h1>
-	<p>
+	body{
+	font-family: sans-serif;
+	}
+	.button {
+	background-color: #FFCC80;
+	border: none;
+	color: Black;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 24px;
+	margin: 4px 2px;
+	cursor: pointer;
+	}
+	.animal-card {
+	border: 1px solid #ccc;
+	padding: 10px;
+	box-shadow: 1px 1px 1px #eee;
+	width: 300px;
+	margin: auto;
+	}
+	</style>
+	</head>
+
+	<h1> A Simple App to Evaluate the Heart Risk to Contract a Coronary Heart Disease (CHD)  </h1>
+	<body align="center">
+	<p align = "Justify">
+		Every year, about 805,000 Americans have a heart attack.
 		This is simple flask app that determines a persons risk for contracting CHD,
 		based on their physical health.
 		<br>The app uses a Random Forest machine learning model, trained with the data
-		from Framingham heart study, with an accuracy of . <br>You can learn more about
-		the study click <a href = "https://framinghamheartstudy.org/fhs-about/"> here </a>.
+		from Framingham heart study.
 		<br>The model, as the data, is biased towards the demographics of Framingham,
 		at the time of the study.
 	</p>
 
-  <h2>Lets Eradicate Chronic Heart Disease (CHD)</h2>
+  <h2>Lets Eradicate Coronary Heart Disease (CHD)</h2>
   <h3>STEP1: Find out if you are risk prone to CHD here:</h3>
   <form action="/render_message" method="post">
 
@@ -90,13 +110,19 @@ p    {color: #273746;}
   {% if message %}
   <h2>{{message}}</h2>
   {% endif %}
-	<p>
+	<p align = 'center'>
 		**The model, as the data, is biased towards the demographics of Framingham,
-		at the time of the study. <br>More details about the study can be found
-		<a href="https://framinghamheartstudy.org/fhs-about/">here</a>. <br>The GitHub
-		repo for this project can be found
+		at the time of the study.
+
+		<h4> Related Links: </h4>
+		The Center for Disease Control's webpage for cardiovascular diseases:
+		<a href="https://www.cdc.gov/heartdisease/facts.htm">here</a>.
+		<br>More details about the Framingham heart study:
+		<a href="https://framinghamheartstudy.org/fhs-about/">here</a>.
+		<br>The GitHubrepo for this project can be found
 		<a href="https://github.com/SamyPal/Project-3-ML-Classification">here</a>.
 
+		<h5> Contact Details </h5>
 		<br>This app was created by Samy Palaniappan, as a part of my learning exp.
 		<br><a href="https://github.com/SamyPal">GitHub</a>.
 		<br><a href="https://www.linkedin.com/in/samy-palaniappan-phd/">LinkedIn</a>.
