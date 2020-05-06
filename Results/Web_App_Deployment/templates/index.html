@@ -1,134 +1,131 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title> A Simple App to Evaluate the Heart Risk to Contract a Coronary Heart Disease (CHD)  </title>
-	<style>
-	body{
-	font-family: sans-serif;
-	}
-	.button {
-	background-color: #FFCC80;
-	border: none;
-	color: Black;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 24px;
-	margin: 4px 2px;
-	cursor: pointer;
-	}
-	.animal-card {
-	border: 1px solid #ccc;
-	padding: 10px;
-	box-shadow: 1px 1px 1px #eee;
-	width: 300px;
-	margin: auto;
-	}
-	</style>
+  <head>
+    <title>Coronary Heart Disease (CHD) Risk Calculator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 	</head>
 
-	<h1> A Simple App to Evaluate the Heart Risk to Contract a Coronary Heart Disease (CHD)  </h1>
-	<body align="center">
-	<p align = "Justify">
-		Every year, about 805,000 Americans have a heart attack.
-		This is simple flask app that determines a persons risk for contracting CHD,
-		based on their physical health.
-		<br>The app uses a Random Forest machine learning model, trained with the data
-		from Framingham heart study.
-		<br>The model, as the data, is biased towards the demographics of Framingham,
-		at the time of the study.
-	</p>
+	<body>
+    <div class="container">
+      <div class="app">
+        <header>
+          <h1>Coronary Heart Disease (CHD) Risk Calculator</h1>
+          <p>
+            Every year, about 805,000 Americans have a heart attack.
+            This app determines a persons risk for contracting CHD,
+            based on their physical health.
+            The app uses a Random Forest machine learning model, trained with the data
+            from Framingham heart study.
+            The model is biased towards the demographics of Framingham.
+          </p>
+        </header>
+    
+        <main>
+          <h2>Lets Eradicate Coronary Heart Disease (CHD)</h2>
+          <h3>Find out if you are risk prone to CHD</h3>
+      
+          <div class="box chd-form">
+              <form action="/render_message" method="post">
+                <label>
+                  <span>Age</span>
+                  <input type="number" name="age" min="1" max="100" placeholder="Age" required>
+                </label>
+                <label>
+                  <span>Total Cholesterol</span>
+                  <input type="number" name="totChol" placeholder="Total Cholesterol" required>
+                </label>
+                <label>
+                  <span>Systolic Blood Pressure</span>
+                  <input type="number" name="SP" placeholder="Systolic Blood Pressure" required>
+                </label>
+                <label>
+                  <span>Diastolic Blood Pressure</span>
+                  <input type="number" name="DP" placeholder="Diastolic Blood Pressure" required>
+                </label>
+                <label>
+                  <span>Height</span>
+                  <input type="number" name="height" min="40" max="300" placeholder="Height" required> cms
+                </label>
+                <label>
+                  <span>Weight</span>
+                  <input type="number" name="weight" min="80" max="800" placeholder="Weight" required> lbs
+                </label>
+                <label>
+                  <span>Cigarettes per Day</span>
+                  <input type="number" name="cigsPerDay" placeholder="Cigarettes count" required>
+                </label>
+                <label>
+                  <span>Heart rate</span>
+                  <input type="number" name="heartRate" placeholder="Heart rate" required>
+                </label>
+                <label>
+                  <span>Glucose</span>
+                  <input type="number" name="glucose" placeholder="Glucose" required>
+                </label>
+                <label>
+                  <span>Sex</span>
+                  <label class="radio">
+                    <input type="radio" value=0 name="male">
+                    <div>Female</div>
+                  </label>
+                  <label class="radio">
+                    <input type="radio" value=1 name="male">
+                    <div>Male</div>
+                  </label>
+                </label>
+                <label>
+                  <span>Prevalent Hypertension</span>
+                  <label class="radio">
+                    <input type="radio" value=0 name="prevalentHyp">
+                    <div>No</div>
+                  </label>
+                  <label class="radio">
+                    <input type="radio" value=1 name="prevalentHyp">
+                    <div>Yes</div>
+                  </label>
+                </label>
+                
+                <label>
+                  <span> </span>
+                  <input type="submit" value="Calculate Risk" />
+                </label>
+            </form>
+          </div>
+          {% if message %}
+          <h2>{{message}}</h2>
+          {% endif %}
+        </main>
+      </div>
+    
+      <div class="links">
 
-  <h2>Lets Eradicate Coronary Heart Disease (CHD)</h2>
-  <h3>STEP1: Find out if you are risk prone to CHD here:</h3>
-  <form action="/render_message" method="post">
-
-    <div style="background-color:#FFCC80;" class="animal-card" align="center")>
-
-			"Age":
-			<br>
-				<input type="int" name="age" value=29>
-			<br>
-      <br>
-			Total Cholesterol:
-      <br>
-        <input type="int" name="totChol" value=150>
-      <br>
-      <br>
-			Diastolic Blood Pressure:
-      <br>
-        <input type="int" name="MAP" value=110>
-      <br>
-      <br>
-			BMI:
-      <br>
-        <input type="int" name="BMI" value=23>
-      <br>
-      <br>
-      Cigarettes per Day:
-      <br>
-      	<input type="int" name="cigsPerDay" value=0>
-      <br>
-      <br>
-			heart rate:
-      <br>
-        <input type="int" name="heartRate" value=72>
-      <br>
-      <br>
-			Glucose:
-      <br>
-        <input type="int" name="glucose" value=98>
-      <br>
-
-      <br>
-			<label for="male">Sex: </label>
-			<select id="male" name="male">
-  			<option value=0>Female</option>
-  			<option value=1>Male</option>
-			</select>
-			<br>
-
-			<br>
-			<label for="prevalentHyp">Prevalent Hypertension:</label>
-			<select id="prevalentHyp" name="prevalentHyp">
-  			<option value=0>No</option>
-  			<option value=1>Yes</option>
-			</select>
-			<br>
-    </div
-
-  <br>
-
-  <button type="submit" class="button">
-    Submit Form
-  </button>
-  </form>
-
-  <br>
-
-  {% if message %}
-  <h2>{{message}}</h2>
-  {% endif %}
-	<p align = 'center'>
-		**The model, as the data, is biased towards the demographics of Framingham,
-		at the time of the study.
-
-		<h4> Related Links: </h4>
-		The Center for Disease Control's webpage for cardiovascular diseases:
-		<a href="https://www.cdc.gov/heartdisease/facts.htm">here</a>.
-		<br>More details about the Framingham heart study:
-		<a href="https://framinghamheartstudy.org/fhs-about/">here</a>.
-		<br>The GitHubrepo for this project can be found
-		<a href="https://github.com/SamyPal/Project-3-ML-Classification">here</a>.
-
-		<h5> Contact Details </h5>
-		<br>This app was created by Samy Palaniappan, as a part of my learning exp.
-		<br><a href="https://github.com/SamyPal">GitHub</a>.
-		<br><a href="https://www.linkedin.com/in/samy-palaniappan-phd/">LinkedIn</a>.
-		<br><a href="https://sites.google.com/view/samy-pal-ph-d/home">Website</a>.
-		<br><a href="https://medium.com/@drsamypal">Blog</a>.
-		<br>You can reach me at drsamypal@gmail.
-	</p>
-</body>
+        <h4>Related Links</h4>
+        <div class="box">
+          <ul>
+            <li>
+              <a href="https://www.cdc.gov/heartdisease/facts.htm">Center for Disease Control</a>
+            </li>
+            <li>
+              <a href="https://framinghamheartstudy.org/fhs-about/">Framingham heart study</a>
+            </li>
+            <li>
+              <a href="https://github.com/SamyPal/Project-3-ML-Classification">GitHub repo for this project</a>
+            </li>
+          </ul>
+        </div>
+  
+        <h4>Contact Details</h4>
+        <div class="box">
+          App created by Samy Palaniappan.
+          <ul>
+            <li><a href="https://github.com/SamyPal">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/samy-palaniappan-phd/">LinkedIn</a></li>
+            <li><a href="https://sites.google.com/view/samy-pal-ph-d/home">Website</a></li>
+            <li><a href="https://medium.com/@drsamypal">Blog</a></li>
+          </ul>
+          You can reach me at drsamypal@gmail.
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
