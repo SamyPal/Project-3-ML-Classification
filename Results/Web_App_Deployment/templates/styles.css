@@ -1,0 +1,114 @@
+body{
+  background-color: #f4f4f4;
+  color: #555555;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.6em;
+}
+
+h4 {
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #84919e;
+}
+
+a:hover {
+  color: #222;
+}
+
+ul {
+  margin-right: 15px;
+  list-style-type: square;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.app {
+  display: inline-block;
+  width: 65%;
+}
+
+.links {
+  width: 25%;
+  float: right;
+}
+
+.box {
+  border: 1px solid #ccc;
+	box-shadow: 1px 1px 1px #eee;
+	background: #f4f7f8;
+	padding: 10px;
+	border-radius: 8px;
+}
+
+.chd-form {
+  max-width: 500px;
+	padding: 20px;
+}
+
+.chd-form label{
+	display: block;
+	margin: 0px 0px 15px 0px;
+}
+.chd-form label > span{
+	width: 250px;
+	font-weight: bold;
+	float: left;
+	padding-top: 8px;
+	padding-right: 5px;
+}
+.chd-form label > input{
+  height: 1.6em;
+  box-sizing: border-box;
+	border: 1px solid #C2C2C2;
+	box-shadow: 1px 1px 4px #EBEBEB;
+	border-radius: 3px;
+	padding: 7px;
+  outline: none;
+}
+.chd-form label > input:focus{
+	border: 1px solid #0C0;
+}
+
+.chd-form input[type=submit],
+.chd-form input[type=button]{
+	border: none;
+	padding: 8px 15px 8px 15px;
+	background: #FF8500;
+	color: #fff;
+	box-shadow: 1px 1px 4px #DADADA;
+  border-radius: 3px;
+  height: 2.5em;
+  width: auto;
+  margin: 10px;
+}
+.chd-form input[type=submit]:hover,
+.chd-form input[type=button]:hover{
+	background: #EA7B00;
+	color: #fff;
+}
+
+.chd-form .radio {
+  display: inline-block;
+  margin-bottom: 0;
+  width: 100px;
+}
+
+.chd-form .radio div{
+  display: inline;
+}
